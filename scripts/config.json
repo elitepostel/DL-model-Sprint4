@@ -1,0 +1,51 @@
+{
+  "data": {
+    "data_dir": "data",
+    "dish_csv": "data/dish.csv",
+    "ingredients_csv": "data/ingredients.csv",
+
+    "train_split": "train",
+    "val_split": "val",
+	"test_split": "test",
+
+    "batch_size": 16,
+    "num_workers": 4
+  },
+
+  "transforms": {
+    "image_size": 224,
+    "use_train_augs": true,
+	"brightness": 0.1,
+	"contrast": 0.1,
+	"hflip": true,
+	"rotation": 5
+  },
+
+  "model": {
+    "image_model": "resnet50",
+    "text_model": "bert-base-uncased",
+
+    "image_embed_dim": 2048,
+    "text_embed_dim": 768,
+
+    "hidden_dim": 512,
+
+    "dropout": 0.2,
+    "num_classes": 1,
+
+    "pretrained": true
+  },
+
+  "training": {
+    "epochs": 30,
+    "lr": 0.0005,
+    "weight_decay": 0.01,
+    "device": "cuda"
+  },
+
+  "logging": {
+    "save_dir": "checkpoints",
+    "print_every": 10
+  }
+}
+ 
